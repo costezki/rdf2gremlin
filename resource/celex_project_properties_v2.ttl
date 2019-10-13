@@ -1,0 +1,180 @@
+@prefix : <http://publications.europa.eu/resources/authority/lam/> .
+@prefix ann: <http://publications.europa.eu/ontology/annotation#> .
+@prefix at: <http://publications.europa.eu/resource/authority/> .
+@prefix atdt: <http://publications.europa.eu/ontology/datatype#> .
+@prefix ato: <http://publications.europa.eu/ontology/authority/> .
+@prefix atr: <http://publications.europa.eu/resource/authority/> .
+@prefix cdm: <http://publications.europa.eu/ontology/cdm#> .
+@prefix celexd: <http://publications.europa.eu/resources/authority/celex/> .
+@prefix cobo: <http://publications.europa.eu/resource/authority/corporate-body/> .
+@prefix corporate-body: <http://publications.europa.eu/resource/authority/corporate-body/> .
+@prefix country: <http://publications.europa.eu/resource/authority/country/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dir-eu-legal-act: <http://publications.europa.eu/resource/authority/dir-eu-legal-act/> .
+@prefix eurovoc: <http://eurovoc.europa.eu/> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix evo: <http://eurovoc.europa.eu/schema#> .
+@prefix fd_040: <http://publications.europa.eu/resource/authority/fd_040/> .
+@prefix fd_100: <http://publications.europa.eu/resource/authority/fd_100/> .
+@prefix fd_130: <http://publications.europa.eu/resource/authority/fd_130/> .
+@prefix fd_301: <http://publications.europa.eu/resource/authority/fd_301/> .
+@prefix fd_330: <http://publications.europa.eu/resource/authority/fd_330/> .
+@prefix fd_335: <http://publications.europa.eu/resource/authority/fd_335/> .
+@prefix fd_340: <http://publications.europa.eu/resource/authority/fd_340/> .
+@prefix fd_345: <http://publications.europa.eu/resource/authority/fd_345/> .
+@prefix fd_350: <http://publications.europa.eu/resource/authority/fd_350/> .
+@prefix fd_361: <http://publications.europa.eu/resource/authority/fd_361/> .
+@prefix fd_365: <http://publications.europa.eu/resource/authority/fd_365/> .
+@prefix fd_370: <http://publications.europa.eu/resource/authority/fd_370/> .
+@prefix fd_375: <http://publications.europa.eu/resource/authority/fd_375/> .
+@prefix fd_395: <http://publications.europa.eu/resource/authority/fd_395/> .
+@prefix fd_396: <http://publications.europa.eu/resource/authority/fd_396/> .
+@prefix fd_400: <http://publications.europa.eu/resource/authority/fd_400/> .
+@prefix fd_578: <http://publications.europa.eu/resource/authority/fd_578/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix lam: <http://publications.europa.eu/ontology/lam-skos-ap#> .
+@prefix lamd: <http://publications.europa.eu/resources/authority/lam/> .
+@prefix language: <http://publications.europa.eu/resource/authority/language/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix place: <http://publications.europa.eu/resource/authority/place/> .
+@prefix procjur: <http://publications.europa.eu/resource/authority/procjur/> .
+@prefix procresult: <http://publications.europa.eu/resource/authority/procresult/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix resource-type: <http://publications.europa.eu/resource/authority/resource-type/> .
+@prefix rety: <http://publications.europa.eu/resource/authority/resource-type/> .
+@prefix role-qualifier: <http://publications.europa.eu/resource/authority/role-qualifier/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix subject-matter: <http://publications.europa.eu/resource/authority/subject-matter/> .
+@prefix treaty: <http://publications.europa.eu/resource/authority/treaty/> .
+@prefix vb: <http://art.uniroma2.it/ontologies/vocbench#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+celexd:md_CODE a skos:Concept ;
+    dct:created "2019-09-27"^^xsd:date ;
+    dct:type "data property" ;
+    skos:inScheme lamd:DocumentProperty ;
+    skos:notation "CODE" ;
+    skos:prefLabel "Concept code"@en ;
+    sh:path skos:notation .
+
+celexd:md_LABEL a skos:Concept ;
+    dct:created "2019-09-27"^^xsd:date ;
+    dct:type "data property" ;
+    skos:inScheme lamd:DocumentProperty ;
+    skos:notation "LABEL" ;
+    skos:prefLabel "Label of the concept"@en ;
+    sh:path skosxl:prefLabel .
+
+lamd:res_YpiHNJhJhgurqMybACWRZd a skos:Collection ;
+    skos:member lamd:res_h9ci2wPXrcUXBh9JkkHzUY ;
+    skos:prefLabel "References" .
+
+lamd:res_wnXwwMsdDjR6LCvSG4smXH a skos:Collection ;
+    skos:member celexd:md_OJ_ID ;
+    skos:prefLabel "Publication reference" .
+
+celexd:md_DTA a skos:Concept ;
+    dct:created "2019-09-27"^^xsd:date ;
+    dct:type "data property" ;
+    skos:definition "The year attributed to the document (internal number or ppf number)."@en ;
+    skos:example "<cdm:resource_legal_year rdf:datatype=\"http://www.w3.org/2001/XMLSchema#gYear\">2014</cdm:resource_legal_year>" ;
+    skos:inScheme lamd:DocumentProperty ;
+    skos:notation "DTA" ;
+    skos:prefLabel "CELEX year - source"@en ;
+    skos:scopeNote """General rule: year referenced in the document. It is usually based on the natural number of document, on the internal number of document attributed by author, or on the date of publication.
+
+The CELEX year represents:
+
+for sector 1: year of signature of the treaty ( for consolidated texts the year of the publication),
+for sector 2: the year of publication of the agreement (for old documents the year of the signature),
+for sectors 3 and 4: the year of the natural or internal document number,
+for sector 5: the year of the natural or internal document number,
+for sector 6: the year the case was lodged,
+for sector 7: the year of adoption of corresponding directive,
+for sector 9: the year the question was introduced."""@en ;
+    sh:path lam:dta .
+
+celexd:md_DTN a skos:Concept ;
+    dct:created "2019-09-27"^^xsd:date ;
+    dct:type "data property" ;
+    skos:definition """A sequential number representing the original reference number of the act.
+
+In some instances composed or non-standardised numbers are attributed (e.g. treaties)."""@en ;
+    skos:example "<cdm:resource_legal_number_natural_celex rdf:datatype=\"http://www.w3.org/2001/XMLSchema#positiveInteger\">0556</cdm:resource_legal_number_natural_celex>" ;
+    skos:inScheme lamd:DocumentProperty ;
+    skos:notation "DTN" ;
+    skos:prefLabel "CELEX number - source"@en ;
+    skos:scopeNote """The sequential number is usually present in the natural number of document (e.g. regulations) or on its internal number attributed by the author (e.g. COM documents). If any of those numbers is not available, the CELEX natural number might be based on the date of publication (international agreements).
+
+The date of publication is derived from the publication reference.
+
+Numbers in parentheses (called "splits" – e.g. (01), (02), …) may be added to avoid double application (if the CELEX number of several similar documents is based on the same date of publication; for several Court decisions on the same case for several documentary units for a preparatory document).
+
+For a corrigendum an “R” is added to the four digits (see CELEX type corrigendum)."""@en ;
+    sh:path lam:dtn .
+
+celexd:md_DTS a skos:Concept ;
+    dct:created "2019-09-27"^^xsd:date ;
+    dct:type "data property" ;
+    skos:definition "The quite diverse origin of the different document types within EUR-Lex is reflected by the sector structure of the database."@en ;
+    skos:example "<j.0:resource_legal_id_sector rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">2</j.0:resource_legal_id_sector>" ;
+    skos:inScheme lamd:DocumentProperty ;
+    skos:notation "DTS" ;
+    skos:prefLabel "CELEX sector"@en ;
+    skos:scopeNote """Documents in EUR-Lex fall into one of 12 sectors.
+1  Treaties
+2  International agreements
+3  Legal acts
+4  Complementary legislation
+5  Preparatory documents
+6  EU case law
+7  National transposition
+8  References to national case-law concerning EU law
+9  Parliamentary questions
+0  Consolidated texts
+C  Other documents published in the Official Journal C series
+E  EFTA documents"""@en ;
+    sh:path lam:dts .
+
+celexd:md_DTT a skos:Concept ;
+    dct:created "2019-09-27"^^xsd:date ;
+    dct:type "data property" ;
+    skos:definition """One or two letter code specifying the type of document. 
+
+This metadata is related to another metadata field Author (created by). Celex type of sector 6 documents (EU case law) refers also to the author of document. Celex type of sector 1 documents refers to a specific treaty. """@en ;
+    skos:example "<cdm:resource_legal_type rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">D</cdm:resource_legal_type>" ;
+    skos:inScheme lamd:DocumentProperty ;
+    skos:notation "DTT" ;
+    skos:prefLabel "CELEX type"@en ;
+    sh:path lam:dtt .
+
+celexd:md_OJ_ID a skos:Concept ;
+    dct:created "2019-09-27"^^xsd:date ;
+    dct:type "data property" ;
+    skos:definition """Identifier of the Official Journal in which was the document published.
+
+The OJ identifier contains several parts:
+- collection OJL or OJC
+- year of the OJ
+- number of the OJ"""@en ;
+    skos:example "<j.0:resource_legal_published_in_official-journal rdf:resource=\"http://publications.europa.eu/resource/oj/JOL_2010_276_R\"/>" ;
+    skos:inScheme lamd:DocumentProperty ;
+    skos:notation "OJ_ID" ;
+    skos:prefLabel "ID of the Official Journal"@en ;
+    sh:path cdm:resource_legal_published_in_official-journal .
+
+lamd:res_h9ci2wPXrcUXBh9JkkHzUY a skos:Collection ;
+    skos:member celexd:md_DTA,
+        celexd:md_DTN,
+        celexd:md_DTS,
+        celexd:md_DTT ;
+    skos:prefLabel "Celex number" .
+
+lamd:DocumentProperty a skos:ConceptScheme ;
+    skos:prefLabel "Document metadata" .
+
