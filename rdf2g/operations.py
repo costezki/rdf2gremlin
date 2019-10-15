@@ -17,9 +17,6 @@ from gremlin_python.process.traversal import T, P, Operator, Bindings
 from gremlin_python.driver.driver_remote_connection import DriverRemoteConnection
 from functools import reduce
 
-logging.basicConfig()
-logging.getLogger().setLevel(logging.INFO)
-
 DEFAULT_LOCAL_CONNECTION_STRING = "ws://localhost:8182/gremlin"
 
 
@@ -76,11 +73,11 @@ def clear_graph(g):
     return True
 
 
-def vertex_to_json(vertex, g):
-    # TODO - Almost certainly a better way of doing this
-    values = g.V(vertex).valueMap().toList()[0]
-    values["id"] = vertex.id
-    return values
+# def vertex_to_json(vertex, g):
+#     # TODO - Almost certainly a better way of doing this
+#     values = g.V(vertex).valueMap().toList()[0]
+#     values["id"] = vertex.id
+#     return values
 
 
 def flatten_list_of_dicts(list_of_dicts):
@@ -184,7 +181,7 @@ def expand_tree(tree_dict, g):
 
 def get_nodes(g):
     """
-        return all the nodes and their propoerties
+        return all the nodes and their properties
     :param g:
     :return:
     """

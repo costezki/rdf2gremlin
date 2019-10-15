@@ -13,15 +13,15 @@ import logging
 
 import rdf2g
 
-logging.basicConfig()
-logging.getLogger().setLevel(logging.INFO)
-
 OUTPUT_FILE_LAM_PROPERTIES = pathlib.Path("../resource/celex_project_properties_v2.ttl").resolve()
 
 
 class MyTestCase(unittest.TestCase):
 
     def setUp(self):
+        logging.basicConfig()
+        logging.getLogger().setLevel(logging.DEBUG)
+
         self.longMessage = True  # Print complete error message
 
         self.rdf_graph = rdflib.Graph()
