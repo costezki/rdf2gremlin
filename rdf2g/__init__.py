@@ -8,7 +8,7 @@ Email: costezki.eugen@gmail.com
 import logging
 from rdf2g.operations import *
 
-__version__ = "0.1.3"
+__version__ = "0.1.33"
 
 level = logging.INFO
 

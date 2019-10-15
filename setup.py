@@ -17,6 +17,8 @@ setup(
     name="rdf2gremlin",
     version=rdf2g.__version__,
     install_requires=requirements,
+    include_package_data=True,
+    # package_data={'': ['*.txt'], },
     author="Eugeniu Costetchi",
     author_email="costezki.eugen@gmail.com",
     description="It has never been easier to transform your RDF data into a property graph based on TinkerPop-Gremlin.",
@@ -25,7 +27,7 @@ setup(
     url="https://github.com/costezki/rdf2gremlin",
     platforms='any',
     keywords='RDF, Gremlin, load, tinkerpop, tinkerpop3, rdf-gremlin, serialisation, ',
-    packages=find_packages(exclude=["test", "test_*"]),
+    packages=find_packages(),  # exclude=["test", "test_*"]
     classifiers=[
         "Development Status :: 3 - Alpha",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
