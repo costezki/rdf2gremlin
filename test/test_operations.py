@@ -13,6 +13,8 @@ import logging
 
 import rdf2g
 
+from gremlin_python.structure.graph import Vertex
+
 OUTPUT_FILE_LAM_PROPERTIES = pathlib.Path("../resource/celex_project_properties_v2.ttl").resolve()
 
 
@@ -30,9 +32,18 @@ class MyTestCase(unittest.TestCase):
         self.g = rdf2g.setup_graph()
 
     def test_get_node(self):
+        skos_concept_iri = rdflib.URIRef("http://www.w3.org/2004/02/skos/core#Concept")
+        skos_concept_label = "skos:Concept"
+        skos_concept_id = self.g.V().hasLabel(skos_concept_label).toList()[0].id
+        skos_concept_node = self.g.V().hasLabel(skos_concept_label).toList()[0]
         known_iri_str = "http://publications.europa.eu/resources/authority/celex/md_OJ_ID"
-        n = rdf2g.get_node(self.g, known_iri_str)
-        assert n, "The node does not exist"
+
+        assert isinstance(rdf2g.get_node(self.g, skos_concept_iri), Vertex), "The node is not found; 1"
+        assert isinstance(rdf2g.get_node(self.g, skos_concept_label), Vertex), "The node is not found; 2"
+        assert isinstance(rdf2g.get_node(self.g, skos_concept_id), Vertex), "The node is not found; 3"
+        assert isinstance(rdf2g.get_node(self.g, skos_concept_node), Vertex), "The node is not found; 4"
+
+        assert isinstance(rdf2g.get_node(self.g, known_iri_str), Vertex), "The node is not found"
 
     def test_get_node_properties(self):
         known_iri_str = "http://publications.europa.eu/resources/authority/celex/md_OJ_ID"
@@ -69,7 +80,7 @@ class MyTestCase(unittest.TestCase):
     def test_transform_graph(self):
         known_iri = 'http://publications.europa.eu/resources/authority/celex/md_CODE'
         s = self.g.V().has('iri', known_iri).outE().inV().tree().next()
-        result = rdf2g.expand_tree(s, self.g)
+        result = rdf2g.expand_tree(self.g, s)
         assert result, "Nothing returned"
         assert result[0]["@label"] == 'celexd:md_CODE', "Unexpected label %s" % result[0]["@label"]
         assert result[0]["rdf:type"]["@label"] == "skos:Concept", "Unexpected rdf:type label %s" % \
@@ -80,6 +91,46 @@ class MyTestCase(unittest.TestCase):
         assert result[0]["skos:inScheme"]["skos:prefLabel"] == "Document metadata", "Unexpected label %s" % \
                                                                                     result[0]["skos:inScheme"][
                                                                                         "skos:prefLabel"]
+
+    def test_get_nodes_of_type(self):
+        skos_concept_iri = rdflib.URIRef("http://www.w3.org/2004/02/skos/core#Concept")
+        skos_concept_label = "skos:Concept"
+        skos_concept_id = self.g.V().hasLabel(skos_concept_label).toList()[0].id
+        skos_concept_node = self.g.V().hasLabel(skos_concept_label).toList()[0]
+
+        assert 9 > len(rdf2g.get_nodes_of_type(self.g, skos_concept_iri)) > 5, "Missing 7 concepts"
+        assert 9 > len(rdf2g.get_nodes_of_type(self.g, skos_concept_label)) > 5, "Missing 7 concepts"
+        assert 9 > len(rdf2g.get_nodes_of_type(self.g, skos_concept_id)) > 5, "Missing 7 concepts"
+        assert 9 > len(rdf2g.get_nodes_of_type(self.g, skos_concept_node)) > 5, "Missing 7 concepts"
+
+    def test_generate_tree(self):
+        known_label = "celexd:md_DTN"
+        node = rdf2g.get_node(self.g, known_label)
+        tree = rdf2g.generate_traversal_tree(self.g, node, max_depth=1)
+        # Expecting this result
+        # {'@type': 'g:Tree',
+        #  '@value': [{'key': v[864],
+        #              'value': {'@type': 'g:Tree',
+        #                        '@value': [{'key': e[947][864-rdf:type->880],
+        #                                    'value': {'@type': 'g:Tree',
+        #                                              '@value': [{'key': v[880],
+        #                                                          'value': {'@type': 'g:Tree',
+        #                                                                    '@value': []}}]}},
+        #                                   {'key': e[903][864-skos:inScheme->899],
+        #                                    'value': {'@type': 'g:Tree',
+        #                                              '@value': [{'key': v[899],
+        #                                                          'value': {'@type': 'g:Tree',
+        #                                                                    '@value': []}}]}},
+        #                                   {'key': e[942][864-sh:path->940],
+        #                                    'value': {'@type': 'g:Tree',
+        #                                              '@value': [{'key': v[940],
+        #                                                          'value': {'@type': 'g:Tree',
+        #                                                                    '@value': []}}]}}]}}]}
+        assert tree, "Nothing returned"
+        assert tree["@value"], "Unexpected tree structure"
+        assert tree["@value"][0]["value"], "Unexpected tree structure"
+        assert 4 > len(tree["@value"][0]["value"]["@value"]) > 2, "Unexpected tree structure"
+        assert tree["@value"][0]["value"]["@value"][1]["value"], "Unexpected tree structure"
 
 
 if __name__ == '__main__':

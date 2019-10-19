@@ -2,3 +2,4 @@ uuid
 rdflib
 pathlib
 gremlinpython
+tornado>=4.4.1,<5.0

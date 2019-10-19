@@ -48,7 +48,7 @@ class MyTestCase(unittest.TestCase):
     def test_clear(self):
         rdf2g.clear_graph(self.g)
         assert len(self.g.V().toList()) == 0, "The graph is not empty"
-        rdf2g.load_rdf2g(self.g, self.rdf_graph)
+        # rdf2g.load_rdf2g(self.g, self.rdf_graph)
 
 
 if __name__ == '__main__':

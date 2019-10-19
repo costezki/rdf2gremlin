@@ -20,6 +20,9 @@ pip install rdf2gremlin
 # ... enjoy ...
 ```
 
+Note: The library `tornado` shall satisfy `tornado>=4.4.1,<5.0` version restriction inherited from the python_gremlin library. 
+
+
 # Prerequisites
 
 Gremlin-Python is designed to connect to a "server" that is hosting a TinkerPop-enabled graph system. That "server"
@@ -90,6 +93,32 @@ The created property graph follows the following set of **conventions**.
 * Predicates connecting an URI to a RDF Literal are transformed into {key:value} pairs and added as node properties.  
 * Nodes have a special property 'iri' that is equivalent to the absolute URI of the RDF resource.
  
+### Get a node
+
+Get a node referring to it either by label, iri or id
+```python
+skos_concept_iri = rdflib.URIRef("http://www.w3.org/2004/02/skos/core#Concept")
+v1 = rdf2g.get_node(g, skos_concept_iri)
+
+skos_concept_label = "skos:Concept"
+v2 = rdf2g.get_node(g, skos_concept_label)
+
+hypothetical_node_id = 880
+v3 = rdf2g.get_node(g, hypothetical_node_id)
+
+print (v1 == v2 == v3) # should be true
+```
+
+Get nodes by their supposed rdf:type. This concept is inherited, of course, from RDF world.
+```python
+skos_concept_label = "skos:Concept"
+
+list_of_concept = rdf2g.get_nodes_of_type(g, skos_concept_label)
+
+# print the list of concepts in the graph
+print (list_of_concept)
+```
+ 
 ### Generate a traversal tree 
 
 It is possible to traverse the property graph and then generate the traversal tree from it. This is especially useful when the graph serves as structured document content say JSON or XML serialisation.      
@@ -101,16 +130,23 @@ known_iri = 'http://publications.europa.eu/resources/authority/celex/md_CODE'
 s = g.V().has('iri', known_iri).outE().inV().tree().next()
 ```
 
+Altenatively use the function `rdf2g.generate_traversal_tree`
+
+```python
+node = rdf2g.get_node(self.g, known_iri)
+s = rdf2g.generate_traversal_tree(self.g, node)
+```
+
 Then expand and simplify that tree. First, simplify the dict structure to simple Python types, removing the Gremlin objects. Second, expand by providing the properties for each visited node, while the edges are considered as special properties leading to a another node dictionary.
 
 ```python
-from rdf2g import expand_tree
 from pprint import pprint
-result = expand_tree(s, g)
+result = rdf2g.expand_tree(g, s)
 pprint (result)
 ```
 
 The traversal tree nodes contain, in addition to original RDF content, two special properties `@id` and `@label` which correspond to the standard Gremlin `id` and `label` properties. The `@` sign is used to distinguish the original RDF from the Gremlin features. Property graph edges, are reduced to keys in the final dict and for this reason they have no additional descriptions just like in the original RDF graph.
+
 
 # Contributing
 You are more than welcome to help expand and mature this project. 
