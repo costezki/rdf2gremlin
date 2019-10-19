@@ -15,7 +15,8 @@ import rdf2g
 
 from gremlin_python.structure.graph import Vertex
 
-OUTPUT_FILE_LAM_PROPERTIES = pathlib.Path("../resource/celex_project_properties_v2.ttl").resolve()
+OUTPUT_FILE_LAM_PROPERTIES = (
+            pathlib.Path(__file__).resolve().parent.parent / "resource/celex_project_properties_v2.ttl").resolve()
 
 
 class MyTestCase(unittest.TestCase):

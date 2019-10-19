@@ -13,10 +13,22 @@ with open("README.md", "r") as fh:
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
+test_deps = [
+    'coverage',
+    'pytest',
+    'pytest-cov',
+    'pytest-xdist'
+]
+extras = {
+    'test': test_deps,
+}
+
 setup(
     name="rdf2gremlin",
     version=rdf2g.__version__,
     install_requires=requirements,
+    tests_require=test_deps,
+    extras_require=extras,
     include_package_data=True,
     # package_data={'': ['*.txt'], },
     author="Eugeniu Costetchi",
