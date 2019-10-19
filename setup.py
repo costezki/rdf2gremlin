@@ -19,6 +19,7 @@ test_deps = [
     'pytest-cov',
     'pytest-xdist'
 ]
+
 extras = {
     'test': test_deps,
 }
