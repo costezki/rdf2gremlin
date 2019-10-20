@@ -20,7 +20,7 @@ before_install:
   - pip install setuptools
   - pip install -U pytest
   - docker pull tinkerpop/gremlin-server
-  - docker run --name gremlin-server -p 8182:8182 tinkerpop/gremlin-server
+  - docker run --name gremlin-server -d -p 8182:8182 tinkerpop/gremlin-server
   - docker ps -a
 
 install:
