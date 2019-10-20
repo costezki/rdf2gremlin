@@ -1,8 +1,15 @@
 language: python
+os:
+  - linux
+sudo: required
+services:
+  - docker
 python:
   - "3.5"
   - "3.6"
   - "3.7"
+  - "3.7-dev"
+  - "3.8-dev"
 
 env:
   - PARALLELIZE=true
@@ -12,6 +19,9 @@ before_install:
   - pip install -U pip
   - pip install setuptools
   - pip install -U pytest
+  - docker pull tinkerpop/gremlin-server
+  - docker run --name gremlin-server -p 8182:8182 tinkerpop/gremlin-server
+  - docker ps -a
 
 install:
   - pip install -r requirements.txt
