@@ -34,6 +34,8 @@ setup(
     # package_data={'': ['*.txt'], },
     author="Eugeniu Costetchi",
     author_email="costezki.eugen@gmail.com",
+    maintainer="Eugeniu Costetchi",
+    maintainer_email="costezki.eugen@gmail.com",
     description="It has never been easier to transform your RDF data into a property graph based on TinkerPop-Gremlin.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -43,11 +45,19 @@ setup(
     packages=find_packages(),  # exclude=["test", "test_*"]
     classifiers=[
         "Development Status :: 3 - Alpha",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3",
         "Topic :: Utilities",
         "Intended Audience :: Developers"
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "Operating System :: OS Independent",
+        "Natural Language :: English",
     ],
     python_requires='>=3.5',
 )

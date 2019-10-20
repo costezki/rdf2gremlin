@@ -17,8 +17,7 @@ env:
 before_install:
   - python --version
   - pip install -U pip
-  - pip install setuptools
-  - pip install -U pytest
+  - pip install --default-timeout 60 setuptools coverage coveralls pytest nose-timer && export HAS_COVERALLS=1
   - docker pull tinkerpop/gremlin-server
   - docker run --name gremlin-server -d -p 8182:8182 tinkerpop/gremlin-server
   - docker ps -a
@@ -30,3 +29,5 @@ install:
 script:
   - pytest --cov=rdf2g test
 
+after_success:
+  - if [[ $HAS_COVERALLS ]] ; then coveralls ; fi

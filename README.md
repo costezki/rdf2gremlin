@@ -1,5 +1,11 @@
 # rdf2gremlin
+[![Build Status](https://travis-ci.org/costezki/rdf2gremlin.svg?branch=master)](https://travis-ci.org/costezki/rdf2gremlin)
+[![PyPI](https://img.shields.io/pypi/v/rdf2gremlin.svg)](https://pypi.python.org/pypi/rdf2gremlin)
+[![PyPI](https://img.shields.io/pypi/pyversions/rdf2gremlin.svg)](https://pypi.python.org/pypi/rdf2gremlin)
+
 It has never been easier to transform your RDF data into a property graph based on TinkerPop-Gremlin.
+
+
 
 # Introduction
 [Apache TinkerPop](<http://tinkerpop.apache.org>) is a graph computing framework for both graph databases (OLTP) and graph analytic systems (OLAP). [Gremlin](<http://tinkerpop.apache.org/gremlin.html>) is the graph traversal language of TinkerPop.
