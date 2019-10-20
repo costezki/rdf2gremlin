@@ -1,5 +1,6 @@
 # rdf2gremlin
 [![Build Status](https://travis-ci.org/costezki/rdf2gremlin.svg?branch=master)](https://travis-ci.org/costezki/rdf2gremlin)
+[![Coverage Status](https://coveralls.io/repos/github/costezki/rdf2gremlin/badge.svg?branch=master)](https://coveralls.io/github/costezki/rdf2gremlin?branch=master)
 [![PyPI](https://img.shields.io/pypi/v/rdf2gremlin.svg)](https://pypi.python.org/pypi/rdf2gremlin)
 [![PyPI](https://img.shields.io/pypi/pyversions/rdf2gremlin.svg)](https://pypi.python.org/pypi/rdf2gremlin)
 

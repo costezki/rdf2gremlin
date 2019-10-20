@@ -17,7 +17,6 @@ test_deps = [
     'coverage',
     'pytest',
     'pytest-cov',
-    'pytest-xdist'
 ]
 
 extras = {
@@ -54,7 +53,7 @@ setup(
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3",
         "Topic :: Utilities",
-        "Intended Audience :: Developers"
+        "Intended Audience :: Developers",
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Operating System :: OS Independent",
         "Natural Language :: English",
