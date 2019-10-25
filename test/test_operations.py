@@ -140,29 +140,56 @@ class MyTestCase(unittest.TestCase):
         tree = rdf2g.generate_traversal_tree(self.g, node, max_depth=1)
 
         exp_tree = rdf2g.expand_tree(self.g, tree)
+        pprint(exp_tree)
 
         assert exp_tree, "Nothing returned"
         assert "@id" in exp_tree[0] and "@label" in exp_tree[0], "Unexpected tree structure"
-        assert exp_tree[0]["@label"] == "lamd:res_qwLgPTUmzVJsf3B42zpMv8", "Unexpected tree structure"
-        assert exp_tree[0]["rdf:type"]["@label"] == "lam:AnnotationConfiguration", "Unexpected tree structure"
+        assert exp_tree[0]["@label"] == known_label, "Unexpected tree structure"
+        assert exp_tree[0]["rdf:type"]["@label"] == "skos:Concept", "Unexpected tree structure"
 
-        # [{'@id': 27648,
-        #   '@label': 'lamd:res_qwLgPTUmzVJsf3B42zpMv8',
-        #   'iri': 'http://publications.europa.eu/resources/authority/lam/res_qwLgPTUmzVJsf3B42zpMv8',
-        #   'lam:path': {'@id': 26751,
-        #                '@label': 'lamd:md_ANN_EOV',
-        #                'dct:created': '2019-09-27',
-        #                'dct:type': 'object property',
-        #                'iri': 'http://publications.europa.eu/resources/authority/lam/md_ANN_EOV',
-        #                'skos:definition': 'This annotation indicates end of validity '
-        #                                   'of a specific amendment.',
-        #                'skos:notation': 'ANN_EOV',
-        #                'skos:prefLabel': 'Annotation: End of validity'},
-        #   'rdf:type': {'@id': 26641,
-        #                '@label': 'lam:AnnotationConfiguration',
-        #                'iri': 'http://publications.europa.eu/ontology/lam-skos-ap#AnnotationConfiguration'},
-        #   'sh:minCount': '1',
-        #   'sh:name': 'Annotated with lamd:md_ANN_EOV'}]
+        # [{'@id': 30429,
+        #   '@label': 'celexd:md_DTN',
+        #   'dct:created': '2019-09-27',
+        #   'dct:type': 'data property',
+        #   'iri': 'http://publications.europa.eu/resources/authority/celex/md_DTN',
+        #   'rdf:type': {'@id': 30431,
+        #                '@label': 'skos:Concept',
+        #                'iri': 'http://www.w3.org/2004/02/skos/core#Concept'},
+        #   'sh:path': {'@id': 30485,
+        #               '@label': 'lam:dtn',
+        #               'iri': 'http://publications.europa.eu/ontology/lam-skos-ap#dtn'},
+        #   'skos:definition': 'A sequential number representing the original reference '
+        #                      'number of the act.\n'
+        #                      '\n'
+        #                      'In some instances composed or non-standardised numbers '
+        #                      'are attributed (e.g. treaties).',
+        #   'skos:example': '<cdm:resource_legal_number_natural_celex '
+        #                   'rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">0556</cdm:resource_legal_number_natural_celex>',
+        #   'skos:inScheme': {'@id': 30458,
+        #                     '@label': 'lamd:DocumentProperty',
+        #                     'iri': 'http://publications.europa.eu/resources/authority/lam/DocumentProperty',
+        #                     'skos:prefLabel': 'Document metadata'},
+        #   'skos:notation': 'DTN',
+        #   'skos:prefLabel': 'CELEX number - source',
+        #   'skos:scopeNote': 'The sequential number is usually present in the natural '
+        #                     'number of document (e.g. regulations) or on its internal '
+        #                     'number attributed by the author (e.g. COM documents). If '
+        #                     'any of those numbers is not available, the CELEX natural '
+        #                     'number might be based on the date of publication '
+        #                     '(international agreements).\n'
+        #                     '\n'
+        #                     'The date of publication is derived from the publication '
+        #                     'reference.\n'
+        #                     '\n'
+        #                     'Numbers in parentheses (called "splits" – e.g. (01), '
+        #                     '(02), …) may be added to avoid double application (if the '
+        #                     'CELEX number of several similar documents is based on the '
+        #                     'same date of publication; for several Court decisions on '
+        #                     'the same case for several documentary units for a '
+        #                     'preparatory document).\n'
+        #                     '\n'
+        #                     'For a corrigendum an “R” is added to the four digits (see '
+        #                     'CELEX type corrigendum).'}]
 
 
 if __name__ == '__main__':
