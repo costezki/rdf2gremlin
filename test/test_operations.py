@@ -8,6 +8,8 @@ Email: costezki.eugen@gmail.com
 import unittest
 
 import pathlib
+from pprint import pprint
+
 import rdflib
 import logging
 
@@ -15,8 +17,7 @@ import rdf2g
 
 from gremlin_python.structure.graph import Vertex
 
-OUTPUT_FILE_LAM_PROPERTIES = (
-            pathlib.Path(__file__).resolve().parent.parent / "resource/celex_project_properties_v2.ttl").resolve()
+from test import OUTPUT_FILE_LAM_PROPERTIES
 
 
 class MyTestCase(unittest.TestCase):
@@ -132,6 +133,36 @@ class MyTestCase(unittest.TestCase):
         assert tree["@value"][0]["value"], "Unexpected tree structure"
         assert 4 > len(tree["@value"][0]["value"]["@value"]) > 2, "Unexpected tree structure"
         assert tree["@value"][0]["value"]["@value"][1]["value"], "Unexpected tree structure"
+
+    def test_expand_tree_1(self):
+        known_label = "celexd:md_DTN"
+        node = rdf2g.get_node(self.g, known_label)
+        tree = rdf2g.generate_traversal_tree(self.g, node, max_depth=1)
+
+        exp_tree = rdf2g.expand_tree(self.g, tree)
+
+        assert exp_tree, "Nothing returned"
+        assert "@id" in exp_tree[0] and "@label" in exp_tree[0], "Unexpected tree structure"
+        assert exp_tree[0]["@label"] == "lamd:res_qwLgPTUmzVJsf3B42zpMv8", "Unexpected tree structure"
+        assert exp_tree[0]["rdf:type"]["@label"] == "lam:AnnotationConfiguration", "Unexpected tree structure"
+
+        # [{'@id': 27648,
+        #   '@label': 'lamd:res_qwLgPTUmzVJsf3B42zpMv8',
+        #   'iri': 'http://publications.europa.eu/resources/authority/lam/res_qwLgPTUmzVJsf3B42zpMv8',
+        #   'lam:path': {'@id': 26751,
+        #                '@label': 'lamd:md_ANN_EOV',
+        #                'dct:created': '2019-09-27',
+        #                'dct:type': 'object property',
+        #                'iri': 'http://publications.europa.eu/resources/authority/lam/md_ANN_EOV',
+        #                'skos:definition': 'This annotation indicates end of validity '
+        #                                   'of a specific amendment.',
+        #                'skos:notation': 'ANN_EOV',
+        #                'skos:prefLabel': 'Annotation: End of validity'},
+        #   'rdf:type': {'@id': 26641,
+        #                '@label': 'lam:AnnotationConfiguration',
+        #                'iri': 'http://publications.europa.eu/ontology/lam-skos-ap#AnnotationConfiguration'},
+        #   'sh:minCount': '1',
+        #   'sh:name': 'Annotated with lamd:md_ANN_EOV'}]
 
 
 if __name__ == '__main__':

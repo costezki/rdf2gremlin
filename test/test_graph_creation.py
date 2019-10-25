@@ -12,9 +12,7 @@ import rdflib
 import logging
 
 import rdf2g
-
-OUTPUT_FILE_LAM_PROPERTIES = (
-            pathlib.Path(__file__).resolve().parent.parent / "resource/celex_project_properties_v2.ttl").resolve()
+from test import OUTPUT_FILE_LAM_PROPERTIES
 
 
 class MyTestCase(unittest.TestCase):
