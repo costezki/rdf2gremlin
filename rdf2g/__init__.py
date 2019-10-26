@@ -19,8 +19,6 @@ from gremlin_python.process.strategies import *
 from gremlin_python.process.traversal import T, P, Operator, Bindings
 from gremlin_python.driver.driver_remote_connection import DriverRemoteConnection
 
-__version__ = "0.1.34"
-
 level = logging.INFO
 
 logging.basicConfig(format='%(asctime)s [%(levelname)s] %(message)s',

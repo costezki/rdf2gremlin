@@ -22,9 +22,11 @@ extras = {
     'test': test_deps,
 }
 
+__version__ = "0.1.35"
+
 setup(
     name="rdf2gremlin",
-    version=rdf2g.__version__,
+    version=__version__,
     install_requires=requirements,
     tests_require=test_deps,
     extras_require=extras,
