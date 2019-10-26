@@ -5,7 +5,6 @@ Author: Eugeniu Costetchi
 Email: costezki.eugen@gmail.com
 """
 from setuptools import setup, find_packages
-import rdf2g
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
