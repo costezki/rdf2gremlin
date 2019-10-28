@@ -38,14 +38,44 @@ class MyTestCase(unittest.TestCase):
         skos_concept_label = "skos:Concept"
         skos_concept_id = self.g.V().hasLabel(skos_concept_label).toList()[0].id
         skos_concept_node = self.g.V().hasLabel(skos_concept_label).toList()[0]
-        known_iri_str = "http://publications.europa.eu/resources/authority/celex/md_OJ_ID"
+        # known_iri_str = "http://publications.europa.eu/resources/authority/celex/md_OJ_ID"
 
-        assert isinstance(rdf2g.get_node(self.g, skos_concept_iri), Vertex), "The node is not found; 1"
-        assert isinstance(rdf2g.get_node(self.g, skos_concept_label), Vertex), "The node is not found; 2"
-        assert isinstance(rdf2g.get_node(self.g, skos_concept_id), Vertex), "The node is not found; 3"
-        assert isinstance(rdf2g.get_node(self.g, skos_concept_node), Vertex), "The node is not found; 4"
+        n = rdf2g.get_node(self.g, skos_concept_iri)
+        assert isinstance(n, Vertex), "The node is not found; 1"
+        assert rdf2g.get_node_properties(self.g, n)["@label"]== skos_concept_label, "Wrong label"
+        n = rdf2g.get_node(self.g, skos_concept_label)
+        assert isinstance(n, Vertex), "The node is not found; 2"
+        assert rdf2g.get_node_properties(self.g, n)["@label"] == skos_concept_label, "Wrong label"
+        n = rdf2g.get_node(self.g, skos_concept_id)
+        assert isinstance(n, Vertex), "The node is not found; 3"
+        assert rdf2g.get_node_properties(self.g, n)["@label"] == skos_concept_label, "Wrong label"
+        n = rdf2g.get_node(self.g, skos_concept_node)
+        assert isinstance(n, Vertex), "The node is not found; 4"
+        assert rdf2g.get_node_properties(self.g, n)["@label"] == skos_concept_label, "Wrong label"
+        # n = rdf2g.get_node(self.g, known_iri_str)
+        # assert isinstance(n, Vertex), "The node is not found"
 
-        assert isinstance(rdf2g.get_node(self.g, known_iri_str), Vertex), "The node is not found"
+    def test_get_node_1(self):
+        skos_concept_iri = rdflib.URIRef("http://publications.europa.eu/resources/authority/lam/res_h9ci2wPXrcUXBh9JkkHzUY")
+        skos_concept_label = "lamd:res_h9ci2wPXrcUXBh9JkkHzUY"
+        pprint(self.g.V().hasLabel(skos_concept_label).toList() )
+
+        skos_concept_id = self.g.V().hasLabel(skos_concept_label).toList()[0].id
+        skos_concept_node = self.g.V().hasLabel(skos_concept_label).toList()[0]
+
+        n = rdf2g.get_node(self.g, skos_concept_iri)
+        assert isinstance(n, Vertex), "The node is not found; 1"
+        assert rdf2g.get_node_properties(self.g, n)["@label"]== skos_concept_label, "Wrong label"
+        n = rdf2g.get_node(self.g, skos_concept_label)
+        assert isinstance(n, Vertex), "The node is not found; 2"
+        assert rdf2g.get_node_properties(self.g, n)["@label"] == skos_concept_label, "Wrong label"
+        n = rdf2g.get_node(self.g, skos_concept_id)
+        assert isinstance(n, Vertex), "The node is not found; 3"
+        assert rdf2g.get_node_properties(self.g, n)["@label"] == skos_concept_label, "Wrong label"
+        n = rdf2g.get_node(self.g, skos_concept_node)
+        assert isinstance(n, Vertex), "The node is not found; 4"
+        assert rdf2g.get_node_properties(self.g, n)["@label"] == skos_concept_label, "Wrong label"
+
 
     def test_get_node_properties(self):
         known_iri_str = "http://publications.europa.eu/resources/authority/celex/md_OJ_ID"
@@ -190,6 +220,21 @@ class MyTestCase(unittest.TestCase):
         #                     '\n'
         #                     'For a corrigendum an “R” is added to the four digits (see '
         #                     'CELEX type corrigendum).'}]
+
+    def test_expand_tree_multi_value(self):
+        skos_concept_iri = rdflib.URIRef("http://publications.europa.eu/resources/authority/lam/res_h9ci2wPXrcUXBh9JkkHzUY")
+        skos_concept_label = "lamd:res_h9ci2wPXrcUXBh9JkkHzUY"
+
+        node = rdf2g.get_node(self.g, skos_concept_label)
+        # pprint(str(node))
+        tree = rdf2g.generate_traversal_tree(self.g, node, max_depth=2)
+        # pprint(tree)
+        exp_tree = rdf2g.expand_tree(self.g, tree)[0]
+        # pprint(exp_tree)
+        assert isinstance(exp_tree["skos:member"], list), "Expecting multiple members"
+        assert "rdf:type" in exp_tree["skos:member"][0], "Expecting an rdf:type [0]"
+        assert "rdf:type" in exp_tree["skos:member"][1], "Expecting an rdf:type [1]"
+        assert "rdf:type" in exp_tree["skos:member"][2], "Expecting an rdf:type [2]"
 
 
 if __name__ == '__main__':

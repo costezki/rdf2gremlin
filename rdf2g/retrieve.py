@@ -77,7 +77,10 @@ def get_node_properties(g, id_):
     # reduction of props to simple dict (abandoning VertexProperty class in favour of property value)
     props = {key: [e.value for e in props[key]] for key in props}
     # deflating lists
-    return {key: props[key] if len(props[key]) > 1 else props[key][0] for key in props}
+    d_props = {key: props[key] if len(props[key]) > 1 else props[key][0] for key in props}
+    d_props["@label"] = g.V(id_).label().next()
+    d_props["@id"] = g.V(id_).id().next()
+    return d_props
 
 
 def get_nodes_of_type(g, id_):
