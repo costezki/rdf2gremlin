@@ -27,6 +27,9 @@ class MyTestCase(unittest.TestCase):
         logging.info('%s triples loaded into RDF graph' % str(len(self.rdf_graph)))
         self.g = rdf2g.setup_graph()
 
+    def test_connection(self):
+        assert self.g, "No graph available"
+
     def test_add_nodes(self):
         for s, p, o in self.rdf_graph:
             subj_node = rdf2g.create_node(self.g, s, self.rdf_graph)

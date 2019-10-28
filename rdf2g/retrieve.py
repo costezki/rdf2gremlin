@@ -110,7 +110,11 @@ def generate_traversal_tree(g, root_, max_depth=4):
     """
     node = get_node(g, root_)
 
+    # return g.V(node). \
+    #     repeat(__.outE().inV().dedup()). \
+    #     until(__.outE().count().is_(0).or_().loops().is_(max_depth)). \
+    #     dedup().tree().next()
     return g.V(node). \
-        repeat(__.outE().inV().dedup()). \
+        repeat(__.outE().inV()). \
         until(__.outE().count().is_(0).or_().loops().is_(max_depth)). \
-        dedup().tree().next()
+        tree().next()

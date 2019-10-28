@@ -7,6 +7,7 @@ Email: costezki.eugen@gmail.com
 import logging
 from gremlin_python.structure.graph import Graph
 from gremlin_python.driver.driver_remote_connection import DriverRemoteConnection
+from gremlin_python.process.anonymous_traversal import traversal
 
 DEFAULT_LOCAL_CONNECTION_STRING = "ws://localhost:8182/gremlin"
 
@@ -26,8 +27,9 @@ def setup_graph(conn_string=DEFAULT_LOCAL_CONNECTION_STRING):
         connection = DriverRemoteConnection(conn_string, 'g')
         logging.debug('Connected')
         # The connection should be closed on shut down to close open connections with connection.close()
-        g = graph.traversal().withRemote(connection)
-        # Reuse 'g' across the application
+
+        # g = graph.traversal().withRemote(connection) # Deprecated instantiation of traversal
+        g = traversal().withRemote(connection)
 
         logging.info('Successfully connected to the graph server')
     except Exception as e:  # Shouldn't really be so broad
