@@ -22,7 +22,7 @@ extras = {
     'test': test_deps,
 }
 
-__version__ = "0.1.35"
+__version__ = "0.1.36"
 
 setup(
     name="rdf2gremlin",
