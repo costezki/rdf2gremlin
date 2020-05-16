@@ -66,7 +66,11 @@ def create_node(g, rdf_term, rdf_graph):
         return existing_node
 
     logging.debug('Adding a new node to the graph.')
-    label = rdf_graph.qname(rdf_term) if rdf_graph.qname(rdf_term) else str(rdf_term)
+
+    if isinstance(rdf_term, rdflib.BNode):
+        label = str(rdf_term)
+    else:
+        label = rdf_graph.qname(rdf_term) if rdf_graph.qname(rdf_term) else str(rdf_term)
     iri = str(rdf_term)
     return g.addV(label).property('iri', iri).next()
 

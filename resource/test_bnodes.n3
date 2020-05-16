@@ -1,0 +1,100 @@
+<http://sample.igsn.org/soilarchive/bqs2dj2u6s73o70jcpr0> <http://purl.org/dc/terms/title> "ANZ soil sample bqs2dj2u6s73o70jcpr0" .
+<http://sample.igsn.org/soilarchive/bqs2dj2u6s73o70jcpr0> <http://schema.org/additionalType> <http://pid.geoscience.gov.au/def/voc/igsn-codelists/PhysicalSample> .
+<http://sample.igsn.org/soilarchive/bqs2dj2u6s73o70jcpr0> <http://schema.org/additionalType> <http://pid.geoscience.gov.au/def/voc/igsn-codelists/soil> .
+<http://sample.igsn.org/soilarchive/bqs2dj2u6s73o70jcpr0> <http://schema.org/creator> <http://sample.igsn.org/soilarchive/CDS-NSW> .
+<http://sample.igsn.org/soilarchive/bqs2dj2u6s73o70jcpr0> <http://schema.org/dateCreated> "1970-07-21T05:03:19-05:00"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://sample.igsn.org/soilarchive/bqs2dj2u6s73o70jcpr0> <http://schema.org/description> "assumenda eum velit ea molestias quia explicabo! possimus cum quam ea qui saepe quaerat. assumenda autem qui omnis in. minima impedit rerum dolorum ullam eos nemo. quidem laudantium quo. ipsam et saepe rerum voluptas perferendis. iste unde maiores magni occaecati. cumque magnam suscipit. facere ipsa iusto magni doloremque iste. qui qui dolorem ea numquam quia alias voluptatem." .
+<http://sample.igsn.org/soilarchive/bqs2dj2u6s73o70jcpr0> <http://schema.org/spatialCoverage> _:bbqs2gpqu6s78kvjb1ee0 .
+<http://sample.igsn.org/soilarchive/bqs2dj2u6s73o70jcpr0> <http://schema.org/title> "ANZ soil sample" .
+<http://sample.igsn.org/soilarchive/bqs2dj2u6s73o70jcpr0> <http://schema.org/url> <http://samples.earth/id/do/bqs2dj2u6s73o70jcpr0> .
+<http://sample.igsn.org/soilarchive/bqs2dj2u6s73o70jcpr0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Thing> .
+<http://sample.igsn.org/soilarchive/bqs2dj2u6s73o70jcpr0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/sosa/Sample> .
+<http://sample.igsn.org/soilarchive/bqs2dj2u6s73o70jcpr0> <http://www.w3.org/2000/01/rdf-schema#label> "ANZ soil sample" .
+<http://sample.igsn.org/soilarchive/bqs2dj2u6s73o70jcpr0> <http://www.w3.org/ns/dcat#landingPage> <http://samples.earth/doc/bqs2dj2u6s73o70jcpr0> .
+<http://sample.igsn.org/soilarchive/bqs2dj2u6s73o70jcpr0> <http://www.w3.org/ns/sosa/isResultOf> _:bbqs2gpqu6s78kvjb1eeg .
+<http://sample.igsn.org/soilarchive/bqs2dj2u6s73o70jcpr0> <http://www.w3.org/ns/sosa/isSampleOf> <http://www.anzsoil.org/data/csiro-natsoil/anzsoilml201/soil/soil_199.CAN.C410> .
+<http://sample.igsn.org/soilarchive/bqs2dj2u6s73o70jcpr0> <http://www.w3.org/ns/sosa/isSampleOf> <http://www.anzsoil.org/data/csiro-natsoil/anzsoilml201/soilhorizon/soil_horizon_199.CAN.C410.1.2> .
+_:bbqs2gpqu6s78kvjb1ee0 <http://schema.org/geo> _:bbqs2gpqu6s78kvjb1ef0 .
+_:bbqs2gpqu6s78kvjb1ee0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Place> .
+_:bbqs2gpqu6s78kvjb1ef0 <http://schema.org/latitude> "23"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:bbqs2gpqu6s78kvjb1ef0 <http://schema.org/longitude> "40"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:bbqs2gpqu6s78kvjb1ef0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoCoordinates> .
+<http://sample.igsn.org/soilarchive/bqs2dniu6s73o70je5g0> <http://purl.org/dc/terms/title> "ANZ soil sample bqs2dniu6s73o70je5g0" .
+<http://sample.igsn.org/soilarchive/bqs2dniu6s73o70je5g0> <http://schema.org/additionalType> <http://pid.geoscience.gov.au/def/voc/igsn-codelists/PhysicalSample> .
+<http://sample.igsn.org/soilarchive/bqs2dniu6s73o70je5g0> <http://schema.org/additionalType> <http://pid.geoscience.gov.au/def/voc/igsn-codelists/soil> .
+<http://sample.igsn.org/soilarchive/bqs2dniu6s73o70je5g0> <http://schema.org/creator> <http://sample.igsn.org/soilarchive/CDS-NSW> .
+<http://sample.igsn.org/soilarchive/bqs2dniu6s73o70je5g0> <http://schema.org/dateCreated> "1985-07-23T08:58:03-05:00"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://sample.igsn.org/soilarchive/bqs2dniu6s73o70je5g0> <http://schema.org/description> "atque id perspiciatis sapiente voluptatem velit ullam velit earum." .
+<http://sample.igsn.org/soilarchive/bqs2dniu6s73o70je5g0> <http://schema.org/spatialCoverage> _:bbqs2gpqu6s78kvjb1e80 .
+<http://sample.igsn.org/soilarchive/bqs2dniu6s73o70je5g0> <http://schema.org/title> "ANZ soil sample" .
+<http://sample.igsn.org/soilarchive/bqs2dniu6s73o70je5g0> <http://schema.org/url> <http://samples.earth/id/do/bqs2dniu6s73o70je5g0> .
+<http://sample.igsn.org/soilarchive/bqs2dniu6s73o70je5g0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Thing> .
+<http://sample.igsn.org/soilarchive/bqs2dniu6s73o70je5g0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/sosa/Sample> .
+<http://sample.igsn.org/soilarchive/bqs2dniu6s73o70je5g0> <http://www.w3.org/2000/01/rdf-schema#label> "ANZ soil sample" .
+<http://sample.igsn.org/soilarchive/bqs2dniu6s73o70je5g0> <http://www.w3.org/ns/dcat#landingPage> <http://samples.earth/doc/bqs2dniu6s73o70je5g0> .
+<http://sample.igsn.org/soilarchive/bqs2dniu6s73o70je5g0> <http://www.w3.org/ns/sosa/isResultOf> _:bbqs2gpqu6s78kvjb1e8g .
+<http://sample.igsn.org/soilarchive/bqs2dniu6s73o70je5g0> <http://www.w3.org/ns/sosa/isSampleOf> <http://www.anzsoil.org/data/csiro-natsoil/anzsoilml201/soil/soil_199.CAN.C410> .
+<http://sample.igsn.org/soilarchive/bqs2dniu6s73o70je5g0> <http://www.w3.org/ns/sosa/isSampleOf> <http://www.anzsoil.org/data/csiro-natsoil/anzsoilml201/soilhorizon/soil_horizon_199.CAN.C410.1.2> .
+_:bbqs2gpqu6s78kvjb1e80 <http://schema.org/geo> _:bbqs2gpqu6s78kvjb1e90 .
+_:bbqs2gpqu6s78kvjb1e80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Place> .
+_:bbqs2gpqu6s78kvjb1e90 <http://schema.org/latitude> "83"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:bbqs2gpqu6s78kvjb1e90 <http://schema.org/longitude> "-178"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:bbqs2gpqu6s78kvjb1e90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoCoordinates> .
+<http://sample.igsn.org/soilarchive/bqs2dhqu6s73o70jcdg0> <http://purl.org/dc/terms/title> "ANZ soil sample bqs2dhqu6s73o70jcdg0" .
+<http://sample.igsn.org/soilarchive/bqs2dhqu6s73o70jcdg0> <http://schema.org/additionalType> <http://pid.geoscience.gov.au/def/voc/igsn-codelists/PhysicalSample> .
+<http://sample.igsn.org/soilarchive/bqs2dhqu6s73o70jcdg0> <http://schema.org/additionalType> <http://pid.geoscience.gov.au/def/voc/igsn-codelists/soil> .
+<http://sample.igsn.org/soilarchive/bqs2dhqu6s73o70jcdg0> <http://schema.org/creator> <http://sample.igsn.org/soilarchive/CDS-NSW> .
+<http://sample.igsn.org/soilarchive/bqs2dhqu6s73o70jcdg0> <http://schema.org/dateCreated> "1997-08-17T07:18:08-05:00"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://sample.igsn.org/soilarchive/bqs2dhqu6s73o70jcdg0> <http://schema.org/description> "voluptatibus et totam voluptate voluptatem. et voluptas quidem quo. voluptatum aliquam aliquid ad. hic accusamus dolor. repellat vitae rerum rem et est labore. praesentium dolorum numquam voluptas. minima expedita quia quia ut rerum corporis amet rem tempore. facere quisquam quo in fuga sunt eos quam." .
+<http://sample.igsn.org/soilarchive/bqs2dhqu6s73o70jcdg0> <http://schema.org/spatialCoverage> _:bbqs2gpqu6s78kvjb1elg .
+<http://sample.igsn.org/soilarchive/bqs2dhqu6s73o70jcdg0> <http://schema.org/title> "ANZ soil sample" .
+<http://sample.igsn.org/soilarchive/bqs2dhqu6s73o70jcdg0> <http://schema.org/url> <http://samples.earth/id/do/bqs2dhqu6s73o70jcdg0> .
+<http://sample.igsn.org/soilarchive/bqs2dhqu6s73o70jcdg0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Thing> .
+<http://sample.igsn.org/soilarchive/bqs2dhqu6s73o70jcdg0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/sosa/Sample> .
+<http://sample.igsn.org/soilarchive/bqs2dhqu6s73o70jcdg0> <http://www.w3.org/2000/01/rdf-schema#label> "ANZ soil sample" .
+<http://sample.igsn.org/soilarchive/bqs2dhqu6s73o70jcdg0> <http://www.w3.org/ns/dcat#landingPage> <http://samples.earth/doc/bqs2dhqu6s73o70jcdg0> .
+<http://sample.igsn.org/soilarchive/bqs2dhqu6s73o70jcdg0> <http://www.w3.org/ns/sosa/isResultOf> _:bbqs2gpqu6s78kvjb1em0 .
+<http://sample.igsn.org/soilarchive/bqs2dhqu6s73o70jcdg0> <http://www.w3.org/ns/sosa/isSampleOf> <http://www.anzsoil.org/data/csiro-natsoil/anzsoilml201/soil/soil_199.CAN.C410> .
+<http://sample.igsn.org/soilarchive/bqs2dhqu6s73o70jcdg0> <http://www.w3.org/ns/sosa/isSampleOf> <http://www.anzsoil.org/data/csiro-natsoil/anzsoilml201/soilhorizon/soil_horizon_199.CAN.C410.1.2> .
+_:bbqs2gpqu6s78kvjb1elg <http://schema.org/geo> _:bbqs2gpqu6s78kvjb1emg .
+_:bbqs2gpqu6s78kvjb1elg <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Place> .
+_:bbqs2gpqu6s78kvjb1emg <http://schema.org/latitude> "-13"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:bbqs2gpqu6s78kvjb1emg <http://schema.org/longitude> "-137"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:bbqs2gpqu6s78kvjb1emg <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoCoordinates> .
+<http://sample.igsn.org/soilarchive/bqs2dmqu6s73o70jds60> <http://purl.org/dc/terms/title> "ANZ soil sample bqs2dmqu6s73o70jds60" .
+<http://sample.igsn.org/soilarchive/bqs2dmqu6s73o70jds60> <http://schema.org/additionalType> <http://pid.geoscience.gov.au/def/voc/igsn-codelists/PhysicalSample> .
+<http://sample.igsn.org/soilarchive/bqs2dmqu6s73o70jds60> <http://schema.org/additionalType> <http://pid.geoscience.gov.au/def/voc/igsn-codelists/soil> .
+<http://sample.igsn.org/soilarchive/bqs2dmqu6s73o70jds60> <http://schema.org/creator> <http://sample.igsn.org/soilarchive/CDS-NSW> .
+<http://sample.igsn.org/soilarchive/bqs2dmqu6s73o70jds60> <http://schema.org/dateCreated> "2003-03-18T02:42:35-06:00"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://sample.igsn.org/soilarchive/bqs2dmqu6s73o70jds60> <http://schema.org/description> "hic atque tempore sint animi." .
+<http://sample.igsn.org/soilarchive/bqs2dmqu6s73o70jds60> <http://schema.org/spatialCoverage> _:bbqs2gpqu6s78kvjb1efg .
+<http://sample.igsn.org/soilarchive/bqs2dmqu6s73o70jds60> <http://schema.org/title> "ANZ soil sample" .
+<http://sample.igsn.org/soilarchive/bqs2dmqu6s73o70jds60> <http://schema.org/url> <http://samples.earth/id/do/bqs2dmqu6s73o70jds60> .
+<http://sample.igsn.org/soilarchive/bqs2dmqu6s73o70jds60> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Thing> .
+<http://sample.igsn.org/soilarchive/bqs2dmqu6s73o70jds60> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/sosa/Sample> .
+<http://sample.igsn.org/soilarchive/bqs2dmqu6s73o70jds60> <http://www.w3.org/2000/01/rdf-schema#label> "ANZ soil sample" .
+<http://sample.igsn.org/soilarchive/bqs2dmqu6s73o70jds60> <http://www.w3.org/ns/dcat#landingPage> <http://samples.earth/doc/bqs2dmqu6s73o70jds60> .
+<http://sample.igsn.org/soilarchive/bqs2dmqu6s73o70jds60> <http://www.w3.org/ns/sosa/isResultOf> _:bbqs2gpqu6s78kvjb1eg0 .
+<http://sample.igsn.org/soilarchive/bqs2dmqu6s73o70jds60> <http://www.w3.org/ns/sosa/isSampleOf> <http://www.anzsoil.org/data/csiro-natsoil/anzsoilml201/soil/soil_199.CAN.C410> .
+<http://sample.igsn.org/soilarchive/bqs2dmqu6s73o70jds60> <http://www.w3.org/ns/sosa/isSampleOf> <http://www.anzsoil.org/data/csiro-natsoil/anzsoilml201/soilhorizon/soil_horizon_199.CAN.C410.1.2> .
+_:bbqs2gpqu6s78kvjb1efg <http://schema.org/geo> _:bbqs2gpqu6s78kvjb1egg .
+_:bbqs2gpqu6s78kvjb1efg <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Place> .
+_:bbqs2gpqu6s78kvjb1egg <http://schema.org/latitude> "26"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:bbqs2gpqu6s78kvjb1egg <http://schema.org/longitude> "-33"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:bbqs2gpqu6s78kvjb1egg <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/GeoCoordinates> .
+<http://sample.igsn.org/soilarchive/bqs2dsqu6s73o70jfjb0> <http://purl.org/dc/terms/title> "ANZ soil sample bqs2dsqu6s73o70jfjb0" .
+<http://sample.igsn.org/soilarchive/bqs2dsqu6s73o70jfjb0> <http://schema.org/additionalType> <http://pid.geoscience.gov.au/def/voc/igsn-codelists/PhysicalSample> .
+<http://sample.igsn.org/soilarchive/bqs2dsqu6s73o70jfjb0> <http://schema.org/additionalType> <http://pid.geoscience.gov.au/def/voc/igsn-codelists/soil> .
+<http://sample.igsn.org/soilarchive/bqs2dsqu6s73o70jfjb0> <http://schema.org/creator> <http://sample.igsn.org/soilarchive/CDS-NSW> .
+<http://sample.igsn.org/soilarchive/bqs2dsqu6s73o70jfjb0> <http://schema.org/dateCreated> "2005-08-02T09:18:28-05:00"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://sample.igsn.org/soilarchive/bqs2dsqu6s73o70jfjb0> <http://schema.org/description> "nesciunt et iste nisi atque et. consequatur enim dicta neque. vel error quos voluptatem in sit facere quo tenetur deserunt. voluptas tenetur architecto minus esse quam. sed dolorem nobis magnam. est culpa non placeat." .
+<http://sample.igsn.org/soilarchive/bqs2dsqu6s73o70jfjb0> <http://schema.org/spatialCoverage> _:bbqs2gpqu6s78kvjb1e9g .
+<http://sample.igsn.org/soilarchive/bqs2dsqu6s73o70jfjb0> <http://schema.org/title> "ANZ soil sample" .
+<http://sample.igsn.org/soilarchive/bqs2dsqu6s73o70jfjb0> <http://schema.org/url> <http://samples.earth/id/do/bqs2dsqu6s73o70jfjb0> .
+<http://sample.igsn.org/soilarchive/bqs2dsqu6s73o70jfjb0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Thing> .
+<http://sample.igsn.org/soilarchive/bqs2dsqu6s73o70jfjb0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/sosa/Sample> .
+<http://sample.igsn.org/soilarchive/bqs2dsqu6s73o70jfjb0> <http://www.w3.org/2000/01/rdf-schema#label> "ANZ soil sample" .
+<http://sample.igsn.org/soilarchive/bqs2dsqu6s73o70jfjb0> <http://www.w3.org/ns/dcat#landingPage> <http://samples.earth/doc/bqs2dsqu6s73o70jfjb0> .
+<http://sample.igsn.org/soilarchive/bqs2dsqu6s73o70jfjb0> <http://www.w3.org/ns/sosa/isResultOf> _:bbqs2gpqu6s78kvjb1ea0 .
+<http://sample.igsn.org/soilarchive/bqs2dsqu6s73o70jfjb0> <http://www.w3.org/ns/sosa/isSampleOf> <http://www.anzsoil.org/data/csiro-natsoil/anzsoilml201/soil/soil_199.CAN.C410> .
+<http://sample.igsn.org/soilarchive/bqs2dsqu6s73o70jfjb0> <http://www.w3.org/ns/sosa/isSampleOf> <http://www.anzsoil.org/data/csiro-natsoil/anzsoilml201/soilhorizon/soil_horizon_199.CAN.C410.1.2> .
