@@ -38,7 +38,7 @@ could be [Gremlin Server](http://tinkerpop.apache.org/docs/current/reference/#gr
 In order to use this library it is necessary to have a Gremlin service available locally or on a remote location. The easiest way is to run a TinkerProp server locally. This can be done by either: 
 (a) downloading and running TinkerPop 
  ```shell script
-wget https://www-eu.apache.org/dist/tinkerpop/3.4.3/apache-tinkerpop-gremlin-server-3.4.3-bin.zip
+wget https://archive.apache.org/dist/tinkerpop/3.4.3/apache-tinkerpop-gremlin-server-3.4.3-bin.zip
 unzip apache-tinkerpop-gremlin-server-3.4.3-bin.zip
 cd apache-tinkerpop-gremlin-server-3.4.3/
 ./bin/gremlin-server.sh start
