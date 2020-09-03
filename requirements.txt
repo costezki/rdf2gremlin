@@ -2,4 +2,12 @@ uuid
 rdflib
 pathlib
 gremlinpython
-tornado>=4.5.3,<5.0
+# tornado>=4.5.3,<5.0
+# tornado>=5,<6.0
+tornado
+sphinx
+sphinxcontrib-apidoc
+#
+# m2r
+myst-parser
+# sphinx-markdown-tables

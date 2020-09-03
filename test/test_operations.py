@@ -32,6 +32,8 @@ class MyTestCase(unittest.TestCase):
         self.rdf_graph.parse(str(OUTPUT_FILE_LAM_PROPERTIES), format="ttl")
         logging.info('%s triples loaded into RDF graph' % str(len(self.rdf_graph)))
         self.g = rdf2g.setup_graph()
+        rdf2g.clear_graph(self.g)
+        rdf2g.load_rdf2g(self.g, self.rdf_graph)
 
     def test_get_node(self):
         skos_concept_iri = rdflib.URIRef("http://www.w3.org/2004/02/skos/core#Concept")

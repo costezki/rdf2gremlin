@@ -19,7 +19,7 @@ before_install:
   - pip install -U pip
   - pip install --default-timeout 60 setuptools coverage coveralls pytest nose-timer && export HAS_COVERALLS=1
   - docker pull tinkerpop/gremlin-server
-  - docker run --name gremlin-server -d -p 8182:8182 tinkerpop/gremlin-server
+  - docker run -d --name gremlin-server -d -p 8182:8182 tinkerpop/gremlin-server
   - docker ps -a
 
 install:
